@@ -1,6 +1,5 @@
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 
 public class Main {
 
@@ -15,6 +14,13 @@ public class Main {
 
         System.out.println(appleBox.compareTo(appleBox1));
         System.out.println(appleBox.compareTo(orangeBox));
+
+        String[] array = new String[]{"С", "Годом", "Новым", "!"};
+        swap(array, 1, 2);
+        System.out.println(Arrays.toString(array));
+
+        ArrayList<String> list = asArrayList(array);
+        System.out.println(list);
     }
 
     //1. Написать метод, который меняет два элемента массива местами.(массив может быть любого ссылочного типа);
@@ -27,7 +33,7 @@ public class Main {
 
     //2. Написать метод, который преобразует массив в ArrayList;
     public static <T> ArrayList<T> asArrayList(T[] arr){
-        return (ArrayList<T>) Arrays.asList(arr);
+        return new ArrayList<T>(Arrays.asList(arr));
     }
 
 }
