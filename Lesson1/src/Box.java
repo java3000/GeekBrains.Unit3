@@ -20,7 +20,7 @@ public class Box<E extends Fruit>  implements Comparable<Box<E>>{
         this.items = items;
     }
 
-    //g. Не забываем про метод добавления фрукта в коробку.
+    //g. Не забываем про метод добавления фрукта в коробку
     public void add(E item){
         items.add(item);
     }
