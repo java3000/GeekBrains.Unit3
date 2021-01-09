@@ -1,4 +1,7 @@
-package server;
+package helpers;
+
+import server.AuthenticationService;
+import server.ConnectionService;
 
 import java.sql.*;
 import java.util.HashSet;
@@ -28,11 +31,7 @@ public class DataBaseHelper {
                                 rs.getString("nickname")
                         ));
                     }
-                } catch (SQLException throwables) {
-                    throwables.printStackTrace();
                 }
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
             }
         } catch (SQLException throwables) {
             throwables.printStackTrace();

@@ -1,5 +1,7 @@
 package client;
 
+import helpers.FileHelper;
+
 import java.io.Closeable;
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
@@ -32,6 +34,8 @@ public class Client {
     public void sendMessage(String message) throws ClientConnectionException {
         try {
             out.writeUTF(message);
+            //1
+            FileHelper.writeHistory(message);
         } catch (IOException e) {
             throw new ClientConnectionException("SWW", e);
         }

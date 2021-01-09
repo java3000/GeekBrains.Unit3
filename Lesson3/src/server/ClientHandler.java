@@ -1,5 +1,8 @@
 package server;
 
+import helpers.DataBaseHelper;
+import helpers.FileHelper;
+
 import java.io.DataInputStream;
 import java.io.DataOutputStream;
 import java.io.IOException;
@@ -35,7 +38,6 @@ public class ClientHandler {
 
     private void listen() {
         new Thread(() -> {
-            //ну, чтоб лишнее не делать.
             if (!isLoggedIn) doAuth();
             receiveMessage();
         }).start();

@@ -1,7 +1,7 @@
 package server;
 
 //import com.mysql.jdbc.Driver
-
+//import helpers.DataBaseHelper;
 import java.util.Set;
 
 public class AuthenticationService {
@@ -13,7 +13,12 @@ public class AuthenticationService {
     }
 
     public void update() {
-        entries = DataBaseHelper.getUsers();
+        //entries = DataBaseHelper.getUsers();
+        entries = Set.of(
+                new CredentialsEntry("l1", "p1", "nickname1"),
+                new CredentialsEntry("l2", "p2", "nickname2"),
+                new CredentialsEntry("l3", "p3", "nickname3")
+        );
     }
 
     public String findNicknameByLoginAndPassword(String login, String password) {
